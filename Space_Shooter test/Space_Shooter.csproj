@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F92C9DA3-D7A7-4934-8420-3CF8A577DCDB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Space_Shooter</RootNamespace>
+    <AssemblyName>Space_Shooter</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bullet.cs" />
+    <Compile Include="Controllers\EnemySpawnController.cs" />
+    <Compile Include="View\TextView\BestiaryTextView.cs" />
+    <Compile Include="View\TextView\GameOverTextView.cs" />
+    <Compile Include="Models\Scoreboard.cs" />
+    <Compile Include="Controllers\ScoreboardController.cs" />
+    <Compile Include="View\TextView\ScoreboardScreenTextView.cs" />
+    <Compile Include="View\TextView\StartMenuTextView.cs" />
+    <Compile Include="Controllers\MenuViewsController.cs" />
+    <Compile Include="View\TextView\ChooseShipTextView.cs" />
+    <Compile Include="Models\Collider.cs" />
+    <Compile Include="Models\CollidersMap.cs" />
+    <Compile Include="Models\EnemyShip.cs" />
+    <Compile Include="Controllers\FPSController.cs" />
+    <Compile Include="Models\GameObject.cs" />
+    <Compile Include="Controllers\GameObjectsController.cs" />
+    <Compile Include="Models\GameObjectType.cs" />
+    <Compile Include="Models\GameState.cs" />
+    <Compile Include="Models\Globals.cs" />
+    <Compile Include="Controllers\PlayerInput.cs" />
+    <Compile Include="Models\PlayerShip.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\Ship.cs" />
+    <Compile Include="Models\ShipsData.cs" />
+    <Compile Include="Controllers\TextSpritesLoader.cs" />
+    <Compile Include="View\TextView\TextViewGameController.cs" />
+    <Compile Include="View\TextView\TextViewSprites.cs" />
+    <Compile Include="Models\Transform.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Data\Scoreboard.txt" />
+    <Content Include="Assets\TextView\Bullet.txt" />
+    <Content Include="Assets\TextView\EnemyShip1.txt" />
+    <Content Include="Assets\TextView\EnemyShip2.txt" />
+    <Content Include="Assets\TextView\PlayerShip1.txt" />
+    <Content Include="Assets\TextView\PlayerShip2.txt" />
+    <Content Include="Assets\TextView\PlayerShip3.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
